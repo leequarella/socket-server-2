@@ -1,0 +1,19 @@
+extend ../layout
+block content
+  a(href="/areas/new")
+    | New Area
+
+  table
+    tr
+      th Name
+      th Description
+    - each record, i in records
+      tr
+        td
+          a(href="areas/show?id="+record._id)= record.name
+        td= record.description
+        th
+          a(href="areas/edit?id="+record._id) edit
+        th
+          a(href="areas/delete?id="+record._id) delete
+

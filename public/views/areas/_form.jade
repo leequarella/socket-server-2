@@ -1,0 +1,29 @@
+form(action="/areas/save", method="post")
+  input(type="hidden", value=area._id, name="_id")
+  .field
+    label Name:
+    input(value=area.name, name="name")
+
+  .field
+    label Description:
+    textarea(name="description")=area.description
+
+  .field
+    label Starting Area:
+    input(type="radio", name="startingArea")
+
+  .adjacentAreas
+    label Adjacent Areas:
+    - each adjacentArea, id in area.adjacentAreas
+      include _adjacent_area_form
+
+  a.addAdjacent(href="#", onclick="addAdj()") Add Adjacent Area
+
+  .actions
+    button Submit
+
+:coffeescript
+  window.addAdj = ->
+    $.ajax "/areas/adjacentForm",
+      success: (transport) ->
+        $(".adjacentAreas").append(transport)

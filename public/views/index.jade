@@ -1,0 +1,21 @@
+extends layout
+block content
+  h1#title Socket Server
+
+  #loginForm
+    input#userName(placeholder="User Name")
+    br
+    input(type='password')#password(placeholder="Password")
+    br
+    button#login Login
+
+  #globalTraffic
+
+  script(src="http://code.jquery.com/jquery-1.9.1.min.js")
+  script(src="/socket.io/socket.io.js")
+  script(src="/client/socket_junk.js")
+  script(src="/client/ui.js")
+  script(src="/client/input.js")
+  script(src="/client/loading_image.js")
+  script(src="/client/lib/spin.min.js")
+  script(src="/client/init.js")

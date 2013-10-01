@@ -1,0 +1,7 @@
+h3 Choose Character
+ul
+- each character, id in characters
+  li
+    a(href="#", onclick="PlayerCharacters.choose('#{character._id}')")= character.name
+
+a(href="#", onclick="PlayerCharacters.getNewForm()") Create New Character

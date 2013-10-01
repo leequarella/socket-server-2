@@ -1,0 +1,20 @@
+extend ../layout
+block content
+  a(href="/users/new")
+    | New User
+
+
+  table
+    tr
+      th userName
+      th _id
+    - each record, i in records
+      tr
+        td
+          a(href="users/show?id="+record._id)= record.userName
+        td= record._id
+        th
+          a(href="users/edit?id="+record._id) edit
+        th
+          a(href="users/delete?id="+record._id) delete
+

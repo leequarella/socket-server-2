@@ -1,0 +1,6 @@
+.field
+  input(name="adjacentArea_direction", value=adjacentArea.direction)
+  select(name="adjacentArea_id")
+    option(value=adjacentArea._id)= adjacentArea.name
+    - each area, id in areas
+      option(value=area._id)= area.name

@@ -1,0 +1,10 @@
+#area_name=area.name
+#area_description=area.description
+
+#exits
+  | Exits
+  -each exit, id in area.adjacentAreas
+    .exit
+      =exit.direction
+      | : 
+      =exit.name

@@ -1,0 +1,17 @@
+p= user.errors
+form(action="/users/save", method="post")
+  input(type="hidden", value=user._id, name="_id")
+  .field
+    label User Name:
+    input(value=user.userName, name="userName")
+
+  .field
+    label Password:
+    input(type="password", name="password")
+
+  .field
+    label Confirm Password:
+    input(type="password", name="passwordConfirm")
+
+  .actions
+    button Submit
